@@ -1,0 +1,13 @@
+version: "3.8"
+
+networks:
+  io:
+    driver: bridge
+
+services:
+  redis:
+    image: 'redis:latest'
+    ports:
+      - '63795:6379'
+    networks:
+      - io

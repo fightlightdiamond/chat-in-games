@@ -1,0 +1,32 @@
+{
+  "name": "realtime",
+  "version": "1.0.0",
+  "description": "TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project.",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc",
+    "serve": "node dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.7.5",
+    "@types/uuid": "^10.0.0",
+    "express": "^4.21.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "@socket.io/cluster-adapter": "^0.2.2",
+    "@socket.io/redis-adapter": "^8.3.0",
+    "@socket.io/sticky": "^1.0.4",
+    "ioredis": "^5.4.1",
+    "socket.io": "^4.8.0",
+    "socketio-sticky-session": "^0.4.3",
+    "sticky-session": "^0.1.0",
+    "uuid": "^10.0.0"
+  }
+}

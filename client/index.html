@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="module">
+        import { io } from "https://cdn.socket.io/4.7.5/socket.io.esm.min.js";
+        const socket = io("http://localhost:4000", {
+            transports: [ "websocket", "polling" ],
+            withCredentials: true
+        });
+        socket.emit('hello', { msg: 123} )
+        socket.on('ohello', (msg) => {
+            alert(msg)
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>
