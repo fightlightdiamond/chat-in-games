@@ -6,7 +6,7 @@ interface CreateOrderPayload {
 
 type ReadOrderCallback = (error: Error | null, data?: any) => void;
 
-export const OrderHandle = (io: Server, socket: Socket) => {
+export const orderHandle = (io: Server, socket: Socket) => {
     const createOrder = (payload: CreateOrderPayload): void => {
         // ...
     }
