@@ -1,72 +1,48 @@
 import {Server, Socket} from "socket.io";
-import {orderHandle, messageHandle} from "../handles";
-import {namespaces} from "../constants";
+import { messageHandle} from "../handles";
+import {roomHandle} from "../handles";
+import {namespaces} from "../seeder";
+import {pubicHandle} from "../handles/public/pubic.handle";
 
 export const registerHandler = (io: Server) => {
-    const defaultNamespace = io.of("/");
+    const defaultNamespace = io.of('/');
+    // authMiddleware(io);
     const adminNamespace = io.of("/admin");
 
-    // const wikiNamespace = io.of("/wiki");
-    // const mozillaNamespace = io.of("/mozilla");
-    // const linuxNamespace = io.of("/linux");
-
+    /**
+     * Default namespace
+     */
     defaultNamespace.on("connection", (socket: Socket) => {
-        console.log(`Socket connection`, socket.id);
+        pubicHandle(io, socket, defaultNamespace);
 
-        socket.on("hello", (err) => {
-            socket.emit("ohello", 123)
+        socket.on('disconnect', (reason) => {
+            console.log(`User with ID: ${socket.id} disconnected. Reason: ${reason}`);
         });
-
-        socket.on("error", (err) => {
-            // ...
-        });
-
-        socket.on("disconnecting", (reason) => {
-            console.log("disconnecting")
-        });
-
-        socket.on("disconnect", (reason) => {
-            console.log("disconnect")
-        });
-
-        orderHandle(io, socket)
-        messageHandle(io, socket)
-
-        adminNamespace.emit("userJoinedMainNs", "")
-
-        socket.join('chat');
-        socket.join('adminChat');
-        defaultNamespace
-            .to("chat")
-            .to("adminChat")
-            .emit("welcomeToChatRoom", {})
     });
 
+    defaultNamespace.on("disconnection", (socket: Socket) => {
+        console.log(`Socket disconnection`, socket.id);
+    });
+
+    /**
+     * Admin namespace
+     */
     adminNamespace.on("connection", (socket: Socket) => {
-        console.log(`Admin Socket connection`, socket.id);
-        messageHandle(io, socket)
-        adminNamespace.emit('messageToClientsFromAdmin', {})
-
-        socket.join("chat")
-        adminNamespace
-            .to("chat")
-            // .to("adminChat")
-            .emit("welcomeToChatRoom", {})
+        //TODO: handle admin namespace
+        console.log(`Admin Socket connection!`, socket.id);
     });
 
+    /**
+     *  Register namespaces
+     */
     namespaces.forEach((namespace) => {
-        const thisNs = io.of(namespace.name);
+        const thisNamespace = io.of(namespace.name);
 
-        thisNs.on("connection", (socket: Socket) => {
-            console.log(`Admin Socket connection`, socket.id);
-            messageHandle(io, socket)
-            thisNs.emit('messageToClientsFromAdmin', {})
+        thisNamespace.on("connection", (socket: Socket) => {
+            //console.log(namespace.name, socket.id);
 
-            socket.join("chat")
-            thisNs
-                .to("chat")
-                // .to("adminChat")
-                .emit("welcomeToChatRoom", {})
+            roomHandle(io, socket, thisNamespace);
+            messageHandle(io, socket, thisNamespace)
         });
     })
 }

@@ -1,11 +1,46 @@
-export interface IMessage {
-    id: number;
-    content: string;
-    room: number;
-    createBy: number;
-    createdAt: string;
+import {MessageEntity} from "../entities/message.entity";
+
+export enum messageType {
+    TEXT = 'TEXT',
+    IMAGE = 'IMAGE',
+    FILE = 'FILE',
 }
 
-export interface IMessageRoom  extends  IMessage {
-    roomId: number;
+export interface IMessage {
+    id: number;
+    senderId: number;
+    message: string;
+    type: messageType
+    timestamp: Date;
 }
+
+export interface IRoomMessage extends IMessage {
+    roomId: number;
+    roomName: string;
+}
+
+export interface IPrivateMessage extends IMessage {
+    recipientId: number | null;
+}
+
+export interface IMessageEntity extends IMessage {
+    id: number;
+    senderId: number;
+    senderName: string;
+    message: string;
+    timestamp: Date;
+    isPrivate?: boolean;
+    roomId?: number;
+    roomName?: string;
+    recipientId?: number | null;
+}
+
+export interface LoadMessagesResponse {
+    messages: IMessage[];
+    hasMore: boolean;
+}
+
+
+export const SEND_PRIVATE_MESSAGE = 'SEND_PRIVATE_MESSAGE';
+export const SEND_ROOM_MESSAGE = 'SEND_PRIVATE_MESSAGE';
+

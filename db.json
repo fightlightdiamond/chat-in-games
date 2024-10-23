@@ -1,0 +1,109 @@
+{
+  "messages": [
+    {
+      "id": 1,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 2,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 3,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 4,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 5,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 6,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 7,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 8,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 9,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 10,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 11,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 12,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    },
+    {
+      "id": 13,
+      "senderId": 1,
+      "senderName": "Alice",
+      "message": "Hello, how are you?",
+      "timestamp": "2024-10-20T14:30:00Z"
+    }
+  ],
+  "users": [],
+  "files": [
+    {
+      "id":  1,
+      "userId":  1,
+      "path": "avatar-1729656195542-254307670.pdf"
+    }
+  ],
+  "shareFile": [
+    {
+      "fileId":  1,
+      "userId":  1
+    }
+  ]
+}
