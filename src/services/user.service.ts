@@ -29,6 +29,28 @@ export const login = async (username: string, password: string): Promise<IUser |
 };
 
 /**
+ * Get User By Token
+ *
+ * @param token
+ */
+export const getUserByToken = async (token: string): Promise<IUser | null> => {
+    const response: AxiosResponse<IUser[], any> = await axios.get(API_URL, {
+        params: {
+            token,
+            _limit: 1
+        }
+    });
+
+    const users = response.data;
+
+    if (users.length > 0) {
+        return users[0];
+    }
+
+    return null;
+};
+
+/**
  * Register
  *
  * @param username

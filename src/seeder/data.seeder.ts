@@ -11,16 +11,12 @@ const room1 = {
     id: 1,
     name: 'PHP',
     namespaceId: 1,
-    private: false,
-    history: [],
 } as IRoom
 
 const room2 = {
     id: 2,
     name: 'Nodejs',
     namespaceId: 1,
-    private: false,
-    history: [],
 } as IRoom
 
 backend.addRoom(new Room(room1).attributes)
@@ -30,16 +26,12 @@ const room11 = {
     id: 11,
     name: 'Javascript',
     namespaceId: 1,
-    private: false,
-    history: [],
 } as IRoom
 
 const room12 = {
     id: 12,
     name: 'CSS',
     namespaceId: 1,
-    private: false,
-    history: [],
 } as IRoom
 
 frontend.addRoom(new Room(room11).attributes)
@@ -49,16 +41,12 @@ const room111 = {
     id: 11,
     name: 'AWS',
     namespaceId: 1,
-    private: false,
-    history: [],
 } as IRoom
 
 const room112 = {
     id: 12,
     name: 'Google',
     namespaceId: 1,
-    private: false,
-    history: [],
 } as IRoom
 
 devops.addRoom(new Room(room111).attributes)

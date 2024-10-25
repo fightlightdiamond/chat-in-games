@@ -92,7 +92,20 @@
       "timestamp": "2024-10-20T14:30:00Z"
     }
   ],
-  "users": [],
+  "users": [
+    {
+      "id": 1,
+      "email": "a@gmail.com",
+      "password": "1",
+      "token": "@"
+    },
+    {
+      "id": 2,
+      "email": "b@gmail.com",
+      "password": "2",
+      "token": "!"
+    }
+  ],
   "files": [
     {
       "id":  1,

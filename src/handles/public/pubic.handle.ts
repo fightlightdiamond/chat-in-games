@@ -11,6 +11,8 @@ import {uploadFile} from "../../services/upload.service";
  */
 export const pubicHandle = (io: Server, socket: Socket, thisNamespace: Namespace) => {
     socket.on(SEND_MESSAGE,  (msg: IMessage) => {
+        const user = (socket as any).user;
+        console.log(`${user.username} sent a message: ${user}`);
         console.log('Handle by socket')
         socket.broadcast.emit(SEND_MESSAGE, msg)
     })
